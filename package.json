@@ -1,34 +1,52 @@
 {
-  "name": "durandal-webpack",
-  "version": "1.0.0",
-  "description": "Durandal + Webpack = Awesome",
-  "main": "index.js",
-  "dependencies": {
-    "durandal": "^2.1.0",
-    "jquery": "^2.1.4",
-    "knockout": "^3.3.0"
-  },
-  "devDependencies": {
-    "html-loader": "^0.3.0",
-    "webpack-dev-server": "^1.15.0",
-    "webpack": "^1.10.5"
-  },
-  "scripts": {
-    "dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Craga89/durandal-webpack.git"
-  },
-  "keywords": [
-    "durandal",
-    "webpack"
-  ],
-  "author": "Craig Michael Thompson",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Craga89/durandal-webpack/issues"
-  },
-  "homepage": "https://github.com/Craga89/durandal-webpack#readme"
+    "name": "durandal-starterkit",
+    "version": "1.0.0",
+    "description": "Default starter website that demonstrates behaviour of using Durandal for building a Single Page Application (with Webpack).",
+    "main": "index.html",
+    "scripts": {
+        "serve": "webpack-dev-server --mode=development",
+        "build": "webpack --mode=production",
+        "webpack-stats": "webpack --profile --json > stats.json",
+        "webpack-analyze": "webpack-bundle-analyzer stats.json"
+    },
+    "keywords": [
+        "Durandal",
+        "SPA",
+        "Webpack",
+        "Starter-Kit"
+    ],
+    "author": "Simon Buckley",
+    "license": "MIT",
+    "dependencies": {
+        "animate.css": "^4.1.1",
+        "bootstrap": "^3.4.1",
+        "core-js": "^3.20.3",
+        "durandal-es6": "^0.11.0",
+        "jquery": "^3.6.0",
+        "jquery-migrate": "^3.3.2",
+        "knockout": "^3.5.1",
+        "knockout.validation": "^2.0.4",
+        "regenerator-runtime": "^0.13.9",
+        "whatwg-fetch": "^3.6.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.7",
+        "@babel/preset-env": "^7.16.8",
+        "autoprefixer": "^10.4.2",
+        "babel-jest": "^27.4.6",
+        "babel-loader": "^8.2.3",
+        "clean-webpack-plugin": "^4.0.0",
+        "css-loader": "^6.5.1",
+        "extract-css-chunks-webpack-plugin": "^4.9.0",
+        "file-loader": "^6.2.0",
+        "html-loader": "^3.1.0",
+        "html-webpack-plugin": "^5.5.0",
+        "mini-css-extract-plugin": "2.4.5",
+        "style-loader": "^3.3.1",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.66.0",
+        "webpack-bundle-analyzer": "^4.5.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.7.3"
+    }
 }
