@@ -1,10 +1,10 @@
 {
-    "name": "durandal-starterkit",
+    "name": "mfe1",
     "version": "1.0.0",
     "description": "Default starter website that demonstrates behaviour of using Durandal for building a Single Page Application (with Webpack).",
     "main": "index.html",
     "scripts": {
-        "serve": "webpack-dev-server --mode=development",
+        "start": "webpack-dev-server --mode=development",
         "build": "webpack --mode=production",
         "webpack-stats": "webpack --profile --json > stats.json",
         "webpack-analyze": "webpack-bundle-analyzer stats.json"

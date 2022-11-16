@@ -12,6 +12,7 @@ export default [
     },
     {
         route: "picsum",
+        hash: "mfe1/#picsum",
         title: "Picsum",
         moduleId() {
             return import(/* webpackChunkName: "picsum-viewmodel" */ "./picsum/picsum").then((module) => {
@@ -22,7 +23,7 @@ export default [
     },
     {
         route: "router*details",
-        hash: "#router",
+        hash: "mfe1/#router",
         title: "Router",
         moduleId() {
             return import(/* webpackChunkName: "router-viewmodel" */ "./router/index").then((module) => {
@@ -33,6 +34,7 @@ export default [
     },
     {
         route: "binding",
+        hash: "mfe1/#binding",
         title: "Binding",
         moduleId() {
             return Binding;
@@ -41,6 +43,7 @@ export default [
     },
     {
         route: "widgets",
+        hash: "mfe1/#widgets",
         title: "Widgets",
         moduleId() {
             return import(/* webpackChunkName: "widgets-viewmodel" */ "./widgets/widgets").then((module) => {
@@ -51,6 +54,7 @@ export default [
     },
     {
         route: "components",
+        hash: "mfe1/#components",
         title: "Components",
         moduleId() {
             return import(/* webpackChunkName: "components-viewmodel" */ "./ko-components/ko-components").then(

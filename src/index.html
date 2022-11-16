@@ -21,23 +21,9 @@
             media="(orientation:portrait)"
         />
         <link rel="apple-touch-icon" href="img/icon.png" />
-
-        <script type="text/javascript">
-            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-                var msViewportStyle = document.createElement("style");
-                var mq = "@@-ms-viewport{width:auto!important}";
-                msViewportStyle.appendChild(document.createTextNode(mq));
-                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-            }
-        </script>
     </head>
-
     <body>
+        <mfe1-element></mfe1-element>
         <div id="applicationHost">
-            <div class="splash">
-                <div class="message">Durandal Starter Kit</div>
-                <i class="fa fa-spinner fa-spin"></i>
-            </div>
-        </div>
     </body>
 </html>

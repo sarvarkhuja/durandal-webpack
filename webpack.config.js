@@ -3,12 +3,15 @@ const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const deps = require('./package.json').dependencies;
 
 module.exports = {
     entry: path.join(__dirname, "src", "main.js"),
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "[name].[chunkhash:8].js",
+		uniqueName: "mfe1",
         environment: {
             // The environment supports arrow functions ('() => { ... }').
             arrowFunction: false,
@@ -105,12 +108,23 @@ module.exports = {
             jQuery: "jquery",
             $: "jquery",
         }),
-        new HtmlWebpackPlugin({
+
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin(),
+        new ModuleFederationPlugin({
+          
+            // For remotes (please adjust)
+            name: "mfe1",
+            library: { type: "var", name: "mfe1" },
+            filename: "remoteEntry.js",
+			exposes: {
+				'./web-components': './src/main.js',
+			},
+          }),
+		  new HtmlWebpackPlugin({
             template: "./src/index.html",
             favicon: "./src/img/favicon.ico",
         }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin(),
     ],
     resolve: {
         extensions: [".js"],
@@ -121,7 +135,11 @@ module.exports = {
     },
     devServer: {
         hot: false,
-        historyApiFallback: true,
-        port: 19003,
+        port: 4201,
+		headers: {
+			"Access-Control-Allow-Origin": "*",
+			"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+			"Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+		  }
     },
 };
